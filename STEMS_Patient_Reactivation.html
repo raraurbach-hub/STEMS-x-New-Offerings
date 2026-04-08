@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEMS Health — What's New</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #e8e5df;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    color: #1a1a18;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .email-wrapper {
+    max-width: 620px;
+    margin: 0 auto;
+    background: #ffffff;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: #0c2624;
+    padding: 48px 48px 40px;
+    text-align: center;
+  }
+
+  .header-logo {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #7ab896;
+    margin-bottom: 28px;
+  }
+
+  .header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: #ede9e1;
+    line-height: 1.18;
+    letter-spacing: -0.015em;
+  }
+
+  .header h1 em {
+    font-style: italic;
+    color: #7ab896;
+  }
+
+  .header-sub {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(237,233,225,0.5);
+    margin-top: 14px;
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+  }
+
+  /* ── ANNOUNCEMENT STRIP ── */
+  .announce-bar {
+    background: #1a5234;
+    padding: 13px 48px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .announce-bar .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #5ec47a;
+    flex-shrink: 0;
+  }
+
+  .announce-bar p {
+    font-size: 11px;
+    font-weight: 400;
+    color: #b8e0c8;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
+  /* ── BODY ── */
+  .body { padding: 48px 48px 0; }
+
+  .salutation {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #1a1a18;
+    margin-bottom: 20px;
+  }
+
+  .intro-text {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #3a3a38;
+    margin-bottom: 16px;
+    font-weight: 300;
+  }
+
+  .intro-text strong {
+    font-weight: 500;
+    color: #111110;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 40px 0 20px;
+  }
+
+  .section-label span {
+    font-size: 9.5px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #1a7a4a;
+    white-space: nowrap;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 0.5px;
+    background: #e0ddd6;
+  }
+
+  /* ── HEADLINES ── */
+  .muse-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 400;
+    color: #1a1a18;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .muse-headline em { font-style: italic; color: #1a7a4a; }
+
+  /* ── BIOMARKERS ── */
+  .biomarker-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 14px 0 16px;
+  }
+
+  .biomarker-tag {
+    font-size: 11.5px;
+    font-weight: 400;
+    color: #1a5234;
+    background: #eaf5ee;
+    border: 0.5px solid #b4dcc4;
+    border-radius: 20px;
+    padding: 4px 12px;
+  }
+
+  /* ── COMPARE TABLE ── */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 6px 0 0;
+    font-size: 13px;
+  }
+
+  .compare-table thead tr { background: #0c2624; }
+
+  .compare-table thead th {
+    padding: 11px 15px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .compare-table thead th:first-child { color: rgba(237,233,225,0.4); width: 26%; }
+  .compare-table thead th:nth-child(2) { color: #7ab896; }
+  .compare-table thead th:last-child { color: rgba(237,233,225,0.4); }
+
+  .compare-table tbody tr { border-bottom: 0.5px solid #e8e5df; }
+  .compare-table tbody tr:nth-child(even) { background: #f9f7f4; }
+
+  .compare-table td {
+    padding: 12px 15px;
+    vertical-align: top;
+    line-height: 1.55;
+    color: #3a3a38;
+  }
+
+  .compare-table td:first-child { font-weight: 500; color: #111110; font-size: 12.5px; }
+  .compare-table td:nth-child(2) { color: #1a5234; }
+  .compare-table td:last-child { color: #7a7a78; }
+
+  /* ── KEY DISTINCTION CALLOUT ── */
+  .distinction-box {
+    background: #f0f7f3;
+    border-left: 3px solid #1a5234;
+    padding: 20px 24px;
+    margin: 24px 0;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .distinction-box .dist-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: #1a5234;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .distinction-box p {
+    font-size: 14px;
+    font-weight: 300;
+    color: #1a1a18;
+    line-height: 1.75;
+  }
+
+  /* ── IV TABLE ── */
+  .iv-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 13px;
+  }
+
+  .iv-table thead tr { background: #0c2624; }
+
+  .iv-table thead th {
+    padding: 11px 15px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .iv-table thead th:first-child { color: rgba(237,233,225,0.4); width: 28%; }
+  .iv-table thead th:nth-child(2) { color: #7ab896; }
+  .iv-table thead th:last-child { color: rgba(237,233,225,0.4); }
+
+  .iv-table tbody tr { border-bottom: 0.5px solid #e8e5df; }
+  .iv-table tbody tr:nth-child(even) { background: #f9f7f4; }
+
+  .iv-table td {
+    padding: 11px 15px;
+    vertical-align: top;
+    line-height: 1.55;
+    color: #3a3a38;
+  }
+
+  .iv-table td:first-child { font-weight: 500; color: #111110; font-size: 12.5px; }
+  .iv-table td:nth-child(2) { color: #1a5234; }
+  .iv-table td:last-child { color: #7a7a78; }
+
+  /* ── SAFETY CARDS ── */
+  .safety-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+    margin: 20px 0;
+  }
+
+  .safety-card {
+    background: #f5f3ef;
+    border: 0.5px solid #e0ddd6;
+    border-top: 2px solid #1a5234;
+    padding: 18px 18px 16px;
+  }
+
+  .safety-card h4 {
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #1a5234;
+    margin-bottom: 7px;
+  }
+
+  .safety-card p {
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: #5a5a58;
+    font-weight: 300;
+  }
+
+  .sourcing-note {
+    background: #f0f7f3;
+    border-top: 2px solid #1a5234;
+    padding: 20px 24px;
+    margin: 4px 0 28px;
+  }
+
+  .sourcing-note p {
+    font-size: 13px;
+    font-weight: 300;
+    color: #2e2e2c;
+    line-height: 1.75;
+  }
+
+  .sourcing-note strong { font-weight: 500; color: #1a5234; }
+
+  /* ── MAIN CTA BOX ── */
+  .offer-box {
+    background: #0c2624;
+    border-radius: 8px;
+    padding: 32px 36px;
+    margin: 40px 0 36px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .offer-box::before {
+    content: '';
+    position: absolute;
+    top: -50px; right: -50px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: rgba(122,184,150,0.05);
+  }
+
+  .offer-eyebrow {
+    font-size: 9.5px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #5ec47a;
+    margin-bottom: 12px;
+  }
+
+  .offer-box h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: #ede9e1;
+    line-height: 1.25;
+    margin-bottom: 20px;
+  }
+
+  .offer-box h3 em { font-style: italic; color: #7ab896; }
+
+  .offer-items { list-style: none; margin: 0 0 26px; }
+
+  .offer-items li {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(237,233,225,0.8);
+    line-height: 1.65;
+    padding: 9px 0;
+    border-bottom: 0.5px solid rgba(122,184,150,0.12);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .offer-items li:last-child { border: none; }
+
+  .offer-items li::before {
+    content: '→';
+    color: #5ec47a;
+    font-size: 13px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .offer-btn {
+    display: inline-block;
+    background: #1a7a4a;
+    color: #ede9e1;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 3px;
+  }
+
+  /* ── SUMMER REFERRAL SECTION ── */
+  .referral-section {
+    border: 1px solid #e0ddd6;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 0 40px;
+  }
+
+  .referral-header {
+    background: #f5f3ef;
+    border-bottom: 1px solid #e0ddd6;
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .referral-badge {
+    background: #0c2624;
+    border-radius: 4px;
+    padding: 8px 14px;
+    flex-shrink: 0;
+  }
+
+  .referral-badge span {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #7ab896;
+    display: block;
+    line-height: 1.6;
+  }
+
+  .referral-header-text h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #1a1a18;
+    line-height: 1.25;
+  }
+
+  .referral-header-text p {
+    font-size: 12px;
+    font-weight: 300;
+    color: #7a7a78;
+    margin-top: 3px;
+  }
+
+  .referral-body {
+    padding: 24px 28px;
+    background: #ffffff;
+  }
+
+  .referral-body p {
+    font-size: 13.5px;
+    font-weight: 300;
+    color: #3a3a38;
+    line-height: 1.8;
+    margin-bottom: 18px;
+  }
+
+  .referral-body p strong {
+    font-weight: 500;
+    color: #111110;
+  }
+
+  .referral-perks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 4px 0 20px;
+  }
+
+  .referral-perk {
+    background: #f5f3ef;
+    border-left: 2px solid #1a5234;
+    padding: 12px 14px;
+  }
+
+  .referral-perk .perk-label {
+    font-size: 9.5px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #1a5234;
+    margin-bottom: 4px;
+  }
+
+  .referral-perk p {
+    font-size: 12.5px;
+    font-weight: 300;
+    color: #4a4a48;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .referral-cta {
+    display: inline-block;
+    border: 1px solid #0c2624;
+    color: #0c2624;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 3px;
+  }
+
+  /* ── FAQ ── */
+  .faq-item {
+    border-bottom: 0.5px solid #e8e5df;
+    padding: 18px 0;
+  }
+
+  .faq-item:first-child { padding-top: 0; }
+
+  .faq-q {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #111110;
+    margin-bottom: 7px;
+    line-height: 1.45;
+  }
+
+  .faq-a {
+    font-size: 13px;
+    font-weight: 300;
+    color: #5a5a58;
+    line-height: 1.75;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: #0c2624;
+    padding: 34px 48px;
+    margin-top: 48px;
+  }
+
+  .footer-logo {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: #ede9e1;
+    margin-bottom: 16px;
+  }
+
+  .footer p {
+    font-size: 11px;
+    font-weight: 300;
+    color: rgba(237,233,225,0.38);
+    line-height: 1.85;
+  }
+
+  .footer a { color: rgba(122,184,150,0.6); text-decoration: none; }
+
+  .disclaimer {
+    padding: 22px 48px;
+    background: #f5f3ef;
+    border-top: 0.5px solid #e0ddd6;
+  }
+
+  .disclaimer p {
+    font-size: 10px;
+    color: #9a9890;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+</style>
+</head>
+<body>
+<div class="email-wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <p class="header-logo">S T E M S</p>
+    <h1>What's new at STEMS.<br><em>It changes everything.</em></h1>
+    <p class="header-sub">A personal note to our patients — Miami Beach</p>
+  </div>
+
+  <!-- Announcement strip -->
+  <div class="announce-bar">
+    <div class="dot"></div>
+    <p>MUSEcells™ now available · Florida's only licensed provider · Priority access for existing patients</p>
+  </div>
+
+  <!-- Body -->
+  <div class="body">
+
+    <p class="salutation">Dear [First Name],</p>
+
+    <p class="intro-text">
+      You've trusted us with your care. We don't take that lightly — and we don't reach out unless something genuinely warrants your attention.
+    </p>
+
+    <p class="intro-text">
+      This does. Since we last treated you, STEMS has taken a significant step forward. We are now one of the only clinics in the world — and <strong>the only practice in Florida</strong> — licensed to administer Dezawa MUSEcells™. Alongside that, we've expanded our IV stem cell therapy offering in ways that go far beyond what most patients have experienced in regenerative medicine.
+    </p>
+
+    <p class="intro-text">
+      We wanted you to know first. And we've reserved priority access for our existing patients.
+    </p>
+
+    <!-- MUSE CELLS -->
+    <div class="section-label"><span>What are MUSEcells™</span></div>
+
+    <h2 class="muse-headline">Not just stem cells.<br><em>A different class entirely.</em></h2>
+
+    <p class="intro-text">
+      The treatments you've received at STEMS are built on mesenchymal stem cells (MSCs) — a proven, rigorously studied therapy that reduces inflammation, signals tissue repair, and produces real outcomes. That foundation hasn't changed. What has changed is what's now possible above it.
+    </p>
+    <p class="intro-text">
+      MUSEcells™ were discovered by <strong>Dr. Mari Dezawa at Tohoku University, Japan.</strong> MUSE stands for <em>Multilineage-differentiating Stress Enduring</em>. Once in the body, they find damaged tissue on their own — migrating autonomously via biological stress signals — and transform into the exact cell type needed for repair: nerve, muscle, cartilage, cardiac tissue, skin, liver, and more. They persist at the repair site for years. No immunosuppression required. Non-tumorigenic. Validated in international clinical trials.
+    </p>
+
+    <!-- Biomarkers -->
+    <div class="section-label"><span>Key Biomarkers &amp; Science</span></div>
+
+    <p class="intro-text" style="margin-bottom: 12px;">MUSEcells™ express pluripotency markers not found in standard MSCs — confirming their ability to differentiate across all three germ layers without tumor risk:</p>
+
+    <div class="biomarker-row">
+      <span class="biomarker-tag">SSEA-3</span>
+      <span class="biomarker-tag">NANOG</span>
+      <span class="biomarker-tag">OCT4</span>
+      <span class="biomarker-tag">SOX2</span>
+      <span class="biomarker-tag">CD105</span>
+      <span class="biomarker-tag">CD29</span>
+      <span class="biomarker-tag">HGF</span>
+      <span class="biomarker-tag">VEGF</span>
+      <span class="biomarker-tag">TGF-β1</span>
+    </div>
+
+    <!-- Compare table -->
+    <div class="section-label"><span>MUSEcells™ vs. Traditional MSCs</span></div>
+
+    <p class="intro-text" style="margin-bottom: 16px;">MSCs are an excellent therapy — and still a cornerstone of what we do. MUSEcells™ represent what the science made possible next. Think of them as the next generation built on an already strong foundation.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>MUSEcells™</th>
+          <th>Traditional MSCs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Differentiation</td>
+          <td>All three germ layers — nerve, muscle, skin, cardiac, liver</td>
+          <td>Strong mesodermal repair — bone, cartilage, connective tissue</td>
+        </tr>
+        <tr>
+          <td>Tissue Homing</td>
+          <td>Migrates autonomously to damaged tissue via biological stress signals</td>
+          <td>Paracrine signaling; distributes broadly, benefits surrounding tissue</td>
+        </tr>
+        <tr>
+          <td>Immune Response</td>
+          <td>Hypoimmune — exceptionally low immunogenicity, seamless integration</td>
+          <td>Well-tolerated; strong immunomodulatory properties</td>
+        </tr>
+        <tr>
+          <td>Longevity</td>
+          <td>Persists at repair site for years, continuing to differentiate</td>
+          <td>Active therapeutic window of weeks to months</td>
+        </tr>
+        <tr>
+          <td>Tumor Risk</td>
+          <td>Non-tumorigenic — validated across decades of research</td>
+          <td>Very low — one of the safest cell therapy platforms in use</td>
+        </tr>
+        <tr>
+          <td>Consistency</td>
+          <td>Highly standardized through inherent pluripotency markers</td>
+          <td>Quality outcomes achievable with proper sourcing and lab standards</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- IV Therapy -->
+    <div class="section-label"><span>Why IV Stem Cell Therapy Is Different</span></div>
+
+    <h2 class="muse-headline">Beyond the injection site.<br><em>The body treated as a system.</em></h2>
+
+    <p class="intro-text">
+      The targeted treatments you know from STEMS are precise and effective — the right tool for site-specific repair. IV stem cell therapy operates from a different principle entirely. <strong>When cells are delivered intravenously, they enter the bloodstream and travel systemically</strong> — reaching every site of damage, inflammation, and cellular aging the body carries, simultaneously.
+    </p>
+    <p class="intro-text">
+      The question it answers is not just where it hurts. It is why the body is breaking down.
+    </p>
+
+    <div class="distinction-box">
+      <p class="dist-label">The key distinction</p>
+      <p>A targeted injection addresses the knee. IV stem cell therapy asks why the knee — and everything else — is breaking down in the first place. Both have a role. But only one has the potential to change the trajectory of your health long-term.</p>
+    </div>
+
+    <p class="intro-text" style="font-weight:500; color:#111110; margin-bottom: 8px;">What IV therapy reaches that site-specific treatment cannot:</p>
+
+    <table class="iv-table">
+      <thead>
+        <tr>
+          <th>Area</th>
+          <th>IV Stem Cell Therapy</th>
+          <th>Site-Specific Treatment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Scope</td>
+          <td>Systemic — reaches all inflamed and damaged tissue simultaneously</td>
+          <td>Precise and effective within the targeted joint or structure</td>
+        </tr>
+        <tr>
+          <td>Inflammation</td>
+          <td>Reduces systemic chronic inflammation — the root driver of most degenerative disease</td>
+          <td>Excellent local inflammation control at the treatment site</td>
+        </tr>
+        <tr>
+          <td>Neurological</td>
+          <td>Supports neural tissue regeneration, cognitive function, and neuroprotection</td>
+          <td>Optimized for musculoskeletal targets; neurological reach is limited</td>
+        </tr>
+        <tr>
+          <td>Cardiovascular</td>
+          <td>Promotes angiogenesis and vascular repair throughout the body</td>
+          <td>Focused on structural tissue; not designed for vascular indications</td>
+        </tr>
+        <tr>
+          <td>Immune</td>
+          <td>Modulates immune response system-wide — relevant for autoimmune conditions</td>
+          <td>Local anti-inflammatory; systemic modulation requires IV delivery</td>
+        </tr>
+        <tr>
+          <td>Longevity</td>
+          <td>Reduces cellular senescence and supports tissue renewal at the systemic level</td>
+          <td>Addresses structural degeneration locally; not a systemic longevity intervention</td>
+        </tr>
+        <tr>
+          <td>Duration</td>
+          <td>Months to years — cells persist and continue differentiating at repair sites</td>
+          <td>Weeks to months — well-suited for targeted, repeatable treatment cycles</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="intro-text">
+      For patients who have already benefited from targeted STEMS treatments — and are ready to address the larger picture — IV stem cell therapy with MUSEcells™ represents the most advanced next step available anywhere.
+    </p>
+
+    <!-- Safety -->
+    <div class="section-label"><span>Safety, Sourcing &amp; Quality Assurance</span></div>
+
+    <p class="intro-text" style="margin-bottom: 20px;">The standard you've come to expect from STEMS extends fully to MUSEcells™. Every question you have about sourcing, testing, and delivery — answered.</p>
+
+    <div class="safety-grid">
+      <div class="safety-card">
+        <h4>Ethical Sourcing</h4>
+        <p>Derived from Wharton's jelly (umbilical cord tissue) donated by healthy mothers following elective caesarean births with full informed consent. No embryos involved.</p>
+      </div>
+      <div class="safety-card">
+        <h4>FDA-Registered Lab</h4>
+        <p>Processed in a cGMP-compliant, FDA-registered U.S. facility under 21 CFR Part 1271 — the federal standard for human cellular and tissue-based products.</p>
+      </div>
+      <div class="safety-card">
+        <h4>Viability Testing</h4>
+        <p>Every batch tested for sterility, cell identity, and viability before release. High thresholds required. Cells are thawed on the day of your procedure — not before.</p>
+      </div>
+      <div class="safety-card">
+        <h4>Cold Chain &amp; CoA</h4>
+        <p>Cryopreserved and shipped in validated, temperature-controlled containers. A full Certificate of Analysis is available for every specific lot used in your treatment.</p>
+      </div>
+    </div>
+
+    <div class="sourcing-note">
+      <p><strong>Sourced directly from the origin.</strong> STEMS obtains MUSEcells™ through MuseCell Innovations™ — Dr. Dezawa's own global distribution company — placing us among a small number of clinics worldwide with verified, authenticated access to this technology. All products arrive with full Certificates of Analysis. Administered by IV infusion or targeted injection. No surgery required.</p>
+    </div>
+
+    <!-- Primary CTA -->
+    <div class="offer-box">
+      <p class="offer-eyebrow">For Existing STEMS Patients</p>
+      <h3>Your Access.<br><em>Your Advantage.</em></h3>
+      <ul class="offer-items">
+        <li>Priority placement on the MUSEcell™ waitlist — reserved for existing patients first</li>
+        <li>Preferred scheduling and dedicated concierge coordination</li>
+        <li>Personal consultation with Dr. Ankeet Choxi — your history, your imaging, your protocol</li>
+        <li>Full review of your prior treatment record to determine optimal next steps</li>
+      </ul>
+      <a href="mailto:hello@stems-health.com" class="offer-btn">Reserve My Consultation →</a>
+    </div>
+
+    <!-- SUMMER REFERRAL SECTION -->
+    <div class="referral-section">
+      <div class="referral-header">
+        <div class="referral-badge">
+          <span>New</span>
+          <span>Summer 2025</span>
+        </div>
+        <div class="referral-header-text">
+          <h4>Patient Appreciation &amp; Referral Program</h4>
+          <p>A thank you — for trusting us, and for sharing us.</p>
+        </div>
+      </div>
+      <div class="referral-body">
+        <p>
+          This summer, we're introducing something we've wanted to do for a long time: a formal way to thank the patients who have made STEMS what it is — and to welcome the people they bring into our care.
+        </p>
+        <p>
+          Whether you've referred a friend, a family member, or a colleague — or you're simply someone we've had the privilege of treating — <strong>there are meaningful benefits available to you this season.</strong>
+        </p>
+        <div class="referral-perks">
+          <div class="referral-perk">
+            <p class="perk-label">For You</p>
+            <p>Exclusive patient appreciation benefits as a thank you for your continued trust in STEMS.</p>
+          </div>
+          <div class="referral-perk">
+            <p class="perk-label">For Who You Refer</p>
+            <p>Priority access and a preferred introduction to Dr. Choxi for anyone you bring to STEMS this summer.</p>
+          </div>
+          <div class="referral-perk">
+            <p class="perk-label">New Patient Welcome</p>
+            <p>Special introductory benefits for patients joining STEMS for the first time through a patient referral.</p>
+          </div>
+          <div class="referral-perk">
+            <p class="perk-label">Limited Window</p>
+            <p>Summer program benefits are time-limited. Reach out now to confirm your eligibility and reserve your spot.</p>
+          </div>
+        </div>
+        <p style="margin-bottom: 20px;">
+          Full details — including specific benefits, eligibility, and how to refer — are available from our concierge team. This is our way of saying thank you. We hope you'll take us up on it.
+        </p>
+        <a href="mailto:hello@stems-health.com" class="referral-cta">Learn More About the Program →</a>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="section-label"><span>Common Questions</span></div>
+
+    <div class="faq-item">
+      <p class="faq-q">Is the lab FDA-registered and compliant?</p>
+      <p class="faq-a">Yes. FDA-registered, cGMP-compliant, operating under 21 CFR Part 1271. We work exclusively with labs that meet this standard — no exceptions.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">How do I know the cells are alive and viable when injected?</p>
+      <p class="faq-a">Every batch is tested for cell viability before release, cryopreserved using validated protocols, and shipped under monitored cold-chain conditions. Cells are thawed precisely on the day of your procedure — not before.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Where do the cells come from, and how are donors screened?</p>
+      <p class="faq-a">Umbilical cord Wharton's jelly, donated by healthy mothers after planned caesarean births with full informed consent. Donors are screened for a full panel of infectious diseases — including HIV and hepatitis — per FDA requirements. Medical and family history reviewed. Only cleared donors accepted.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Has this been studied in clinical trials?</p>
+      <p class="faq-a">Yes. MUSEcells™ have been the subject of clinical trials in Japan and extensively studied in peer-reviewed literature across neurological, cardiovascular, autoimmune, and musculoskeletal indications. Dr. Choxi can speak to the evidence base specific to your condition.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Can I see the Certificate of Analysis for my batch?</p>
+      <p class="faq-a">Absolutely. A full CoA — documenting cell count, viability, sterility results, and identity markers for your specific lot — is available upon request. Always.</p>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p class="footer-logo">S T E M S .</p>
+    <p>
+      Questions? We're here.<br>
+      <a href="tel:3056770565">(305) 677-0565</a> &nbsp;·&nbsp; <a href="mailto:hello@stems-health.com">hello@stems-health.com</a><br>
+      925 W 41st St Suite 300A, Miami Beach, FL 33140<br>
+      <a href="http://www.stems-health.com">stems-health.com</a>
+    </p>
+  </div>
+
+  <div class="disclaimer">
+    <p>This communication is for existing STEMS Health patients. Regenerative therapies are not covered by insurance and outcomes are not guaranteed. MUSEcells™ are administered under physician oversight; candidacy is determined following individual consultation and imaging review. MUSEcells™ and DEZAWA MUSE Cell® are trademarks of MuseCell Innovations™ PTE LTD. Summer referral program benefits subject to terms and availability — contact our team for full details. To unsubscribe, reply with "unsubscribe."</p>
+  </div>
+
+</div>
+</body>
+</html>
